@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1</title>
+    </script>
+</head>
+<body>
+
+<script>
+
+let dado;
+
+do {
+    dado = prompt("Insira um dado: ");
+} while (dado === null || dado === "");
+
+let numero = !isNaN(parseFloat(dado)) && isFinite(dado);
+let boolean = dado.toUpperCase() === "TRUE" || dado.toUpperCase() === "FALSE";
+
+if (numero) {
+    alert("O dado é um Número");
+} else if (boolean) {
+    alert("O dado é Boleano");
+} else {
+    alert("O dado é uma String");
+}
+
+alert("Obrigada por visitar essa página");
+
+</script>
+
+<h3>Atividade 1 - Tipo de Dado </h3>
+<br>
+<a href="index.html">Voltar a Página Principal</a>
+
+</body>
+</html>

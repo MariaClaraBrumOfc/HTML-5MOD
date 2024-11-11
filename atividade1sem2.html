@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1 - Semana 2</title>
+</head>
+
+<body>
+    <form>
+        <label>Insira um dado:</label><br>
+        <input type="text" id="inpVal">
+        <br>
+        <input type="button" id="btnEnviar" value="Adicionar Dado" onclick="adicionarDado()">
+        <p id="array"></p>
+    </form>
+
+    <script>
+        var valores = [];
+
+        function verificar() {
+            let verif = document.getElementById("inpVal").value;
+            if (!isNaN(verif)) {
+                alert("Insira apenas dados como letras, palavras ou frases.");
+                limpar();
+            }
+        }
+
+        function adicionarDado() {
+            verificar(); 
+
+            let novoValor = document.getElementById("inpVal").value.trim();
+
+            if (novoValor !== "") {
+                valores.push(novoValor);
+                valores.sort();
+                exibirDadoOrdenado();
+                limparInput();
+            } else {
+                alert("Valor Inválido.");
+            }
+        }
+
+        function exibirDadoOrdenado() {
+            let orderedList = document.getElementById("array");
+            orderedList.innerHTML = 'Dados Inseridos Por Ordem alfabética: ' + valores.join(', ');
+        }
+
+        function limpar() {
+            document.getElementById("inpVal").value = "";
+        }
+    </script>
+</body>
+
+</html>

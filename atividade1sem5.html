@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contador de Pessoas</title>
+</head>
+<body>
+<script>
+
+  let totalHomens = 0;
+  let totalMulheres = 0;
+
+  function atualizarContador() {
+    homemCount.textContent = `Homens: ${totalHomens}`;
+    mulherCount.textContent = `Mulheres: ${totalMulheres}`;
+    totalCount.textContent = `Total: ${totalHomens + totalMulheres}`;
+  }
+
+  function addHomem() {
+    totalHomens++;
+    atualizarContador();
+  }
+
+  function removeHomem() {
+    if (totalHomens > 0) {
+      totalHomens--;
+      atualizarContador();
+    }
+  }
+
+  function addMulher() {
+    totalMulheres++;
+    atualizarContador();
+  }
+
+  function removeMulher() {
+    if (totalMulheres > 0) {
+      totalMulheres--;
+      atualizarContador();
+    }
+  }
+
+  const body = document.querySelector('body');
+  const container = document.createElement('div');
+  const counterDiv = document.createElement('div');
+  const homemDiv = document.createElement('div');
+  const mulherDiv = document.createElement('div');
+  const totalDiv = document.createElement('div');
+  const homemCount = document.createElement('h3');
+  const mulherCount = document.createElement('h3');
+  const totalCount = document.createElement('h3');
+  const addHomemBotao = document.createElement('button');
+  const removeHomemBotao = document.createElement('button');
+  const addMulherBotao = document.createElement('button');
+  const removeMulherBotao = document.createElement('button');
+  const imgHomem = document.createElement('img');
+  const imgMulher = document.createElement('img');
+
+  container.style.fontFamily = 'Arial, sans-serif';
+  container.style.textAlign = 'center';
+  container.style.marginTop = '50px';
+  container.style.border = '2px solid #333';
+  container.style.borderRadius = '10px';
+  container.style.padding = '20px';
+  container.style.width = '300px';
+  container.style.margin = '0 auto';
+
+  homemCount.textContent = 'Homens: 0';
+  mulherCount.textContent = 'Mulheres: 0';
+  totalCount.textContent = 'Total: 0';
+
+  addHomemBotao.textContent = 'Adicionar Homem';
+  removeHomemBotao.textContent = 'Remover Homem';
+  addMulherBotao.textContent = 'Adicionar Mulher';
+  removeMulherBotao.textContent = 'Remover Mulher';
+
+  addHomemBotao.style.padding = '5px 10px';
+  addHomemBotao.style.margin = '5px';
+  removeHomemBotao.style.padding = '5px 10px';
+  removeHomemBotao.style.margin = '5px';
+  addMulherBotao.style.padding = '5px 10px';
+  addMulherBotao.style.margin = '5px';
+  removeMulherBotao.style.padding = '5px 10px';
+  removeMulherBotao.style.margin = '5px';
+  imgHomem.src = 'homem.jpg';
+  imgHomem.alt = 'Imagem de homem';
+  imgHomem.width = '200';
+  imgMulher.src = 'mulher.png';
+  imgMulher.alt = 'Imagem de mulher';
+  imgMulher.width = '200';
+
+  body.appendChild(container);
+  container.appendChild(counterDiv);
+  counterDiv.appendChild(imgHomem);
+  counterDiv.appendChild(homemDiv);
+  homemDiv.appendChild(homemCount);
+  homemDiv.appendChild(addHomemBotao);
+  homemDiv.appendChild(removeHomemBotao);
+  counterDiv.appendChild(mulherDiv);
+  mulherDiv.appendChild(imgMulher); 
+  mulherDiv.appendChild(mulherCount);
+  mulherDiv.appendChild(addMulherBotao);
+  mulherDiv.appendChild(removeMulherBotao);
+  counterDiv.appendChild(totalDiv);
+  totalDiv.appendChild(totalCount);
+
+  addHomemBotao.addEventListener('click', addHomem);
+  removeHomemBotao.addEventListener('click', removeHomem);
+  addMulherBotao.addEventListener('click', addMulher);
+  removeMulherBotao.addEventListener('click', removeMulher);
+
+  atualizarContador();
+</script>
+</body>
+</html>

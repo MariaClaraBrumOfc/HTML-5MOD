@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 2 - Semana 3</title>
+    <script>
+        const horaAtual = new Date();
+
+        const hours = horaAtual.getHours();
+        const minutes = horaAtual.getMinutes();
+        const seconds = horaAtual.getSeconds();
+
+        const horario = `${hours}:${minutes}:${seconds}`;
+
+        const horarioescrito = ` <br><br>Agora são ${hours} horas ${minutes} minutos e ${seconds} segundos`;
+
+
+        //função para atualizar a página e os segundos rodarem 'location.reload'
+        setInterval(function(horaAtual){
+            location.reload();
+        }, 1000);
+
+    document.write(horario);
+    document.write(horarioescrito);
+
+    </script>
+</head>
+<body>
+    <br><br>
+    <a href="index.html">Voltar a Página Principal</a>
+    <br><br>
+    <a href="semana3.html">Voltar As Atividades da Semana</a>
+</body>
+</html>

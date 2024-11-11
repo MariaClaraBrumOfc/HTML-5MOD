@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 3 - Semana 3</title>
+</head>
+<body>
+    <label for="textoInput">Insira uma palavra ou frase:</label>
+    <input type="text" id="textoInput">
+    <button onclick="seEpalindromo()">Enviar</button>
+
+    <script>
+        function seEpalindromo(){
+            const inputText = document.getElementById('textoInput').value.toLowerCase().replace(/[^a-z0-9]/g, '');
+            const length = inputText.length;
+            let Epalindromo = true;
+
+            for(let i = 0; i < Math.floor(length / 2); i++){
+                if (inputText[i] !== inputText[length - 1 - i]){
+                    Epalindromo = false;
+                    break;
+                }
+            }
+            alert(Epalindromo ? `A palavra "${inputText}"  é um palíndromo!"` : 
+            `A palavra "${inputText}" não é um palíndromo!`);
+        }
+    </script>
+
+    <br><br>
+    <a href="index.html">Voltar a Página Principal</a>
+    <br><br>
+    <a href="semana3.html">Voltar As Atividades da Semana</a>
+
+</body>
+</html>

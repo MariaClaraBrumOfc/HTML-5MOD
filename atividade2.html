@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 2</title>
+    </script>
+</head>
+<body>
+
+    <script>
+
+let numero;
+let c = 0;
+do {
+    numero = prompt('Digite um número inteiro e POSITIVO');
+    }
+    while (isNaN(numero)){
+        for(let int = 1; int <= numero; int++){
+        if (numero % int == 0){
+                c ++;
+            }
+        }
+        if (c <= 2 && numero != 1){
+                alert("O número inserido é primo");
+        }
+        else{
+            alert('O número inserido não é primo')
+            }
+        }
+    </script>
+
+<h3>Atividade 2 - Identificar se o número é Primo</h3>
+<br>
+<a href="index.html">Voltar a Página Principal</a>
+    
+</body>
+</html>
